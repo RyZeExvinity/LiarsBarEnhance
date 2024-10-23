@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
-
 using UnityEngine;
-
 using CharControllerFloatMemberAccessor = LiarsBarEnhance.Utils.FastMemberAccessor<CharController, float>;
 
 namespace LiarsBarEnhance.Features;

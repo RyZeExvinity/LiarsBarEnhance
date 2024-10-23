@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
-
 using JetBrains.Annotations;
 
 namespace LiarsBarEnhance.Utils;
 
 public static class FastMemberAccessor<TClass, TValue> where TClass : class
 {
-    private static Dictionary<string, Func<TClass, TValue>> getters = new();
-    private static Dictionary<string, Action<TClass, TValue>> setters = new();
+    private static readonly Dictionary<string, Func<TClass, TValue>> getters = new();
+    private static readonly Dictionary<string, Action<TClass, TValue>> setters = new();
 
     private static readonly BindingFlags bindingAttr = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;
 
@@ -18,16 +17,17 @@ public static class FastMemberAccessor<TClass, TValue> where TClass : class
     {
         if (!getters.TryGetValue(memberName, out var getter))
         {
-            (var member, var isStatic) = FindMember(memberName);
+            var (member, isStatic) = FindMember(memberName);
             if (member == null)
                 throw new Exception($"Couldn't find member {memberName} for type {typeof(TClass).Name}");
 
             var instanceParameterExpression = Expression.Parameter(typeof(TClass), "instance");
             var memberExpression = Expression.MakeMemberAccess(isStatic ? null : instanceParameterExpression, member);
-            var lambda = Expression.Lambda<Func<TClass, TValue>>(memberExpression, [instanceParameterExpression]);
+            var lambda = Expression.Lambda<Func<TClass, TValue>>(memberExpression, instanceParameterExpression);
             getter = lambda.Compile();
             getters.Add(memberName, getter);
         }
+
         return getter(instance);
     }
 
@@ -35,7 +35,7 @@ public static class FastMemberAccessor<TClass, TValue> where TClass : class
     {
         if (!setters.TryGetValue(memberName, out var setter))
         {
-            (var member, var isStatic) = FindMember(memberName);
+            var (member, isStatic) = FindMember(memberName);
             if (member == null)
                 throw new Exception($"Couldn't find member {memberName} for type {typeof(TClass).Name}");
             if (member is PropertyInfo { GetMethod: null })
@@ -49,6 +49,7 @@ public static class FastMemberAccessor<TClass, TValue> where TClass : class
             setter = lambda.Compile();
             setters.Add(memberName, setter);
         }
+
         setter(instance, value);
     }
 

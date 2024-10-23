@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-
 using LiarsBarEnhance.Components;
 
 namespace LiarsBarEnhance.Features;

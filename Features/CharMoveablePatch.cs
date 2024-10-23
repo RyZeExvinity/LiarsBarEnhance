@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
-
 using LiarsBarEnhance.Components;
-
 using UnityEngine;
 
 namespace LiarsBarEnhance.Features;
