@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
-
 using LiarsBarEnhance.Utils;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +27,7 @@ public class ChatProPatch
         {
             senderName = __instance.GetComponent<PlayerObjectController>().PlayerName;
         }
+
         var message = $"<color=#FDE2AA>[{senderName}]</color>:{text}";
         AccessTools.Method(typeof(ChatNetwork), "CmdSendMessage", [typeof(string)]).Invoke(__instance, [message]);
         ___inputField.text = string.Empty;

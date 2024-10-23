@@ -1,9 +1,5 @@
-﻿using System;
-
-using HarmonyLib;
-
+﻿using HarmonyLib;
 using LiarsBarEnhance.Utils;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +16,7 @@ public class SelectableLevelController : MonoBehaviour
 
         var button = rankParentTable.parent.Find("rankpage").gameObject.AddComponent<Button>();
         button.interactable = true;
-        button.colors = new ColorBlock()
+        button.colors = new ColorBlock
         {
             normalColor = Color.white,
             highlightedColor = Color.white,

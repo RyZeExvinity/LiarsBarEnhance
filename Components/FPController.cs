@@ -1,20 +1,18 @@
-﻿using System;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LiarsBarEnhance.Components;
 
 public class FpController : MonoBehaviour
 {
-    private PlayerStats _playerStats;
-    private CharController _charController;
     private readonly float _acceleration = 10f;
-    private readonly float _deceleration = 100f;
     private readonly float _bodySpeed = 5f;
+    private readonly float _deceleration = 100f;
+    private CharController _charController;
     private Vector3 _headSpeed;
-    private Vector3 _initHeadPosition;
     private Vector3 _initBodyPosition;
     private Quaternion _initBodyRotation;
+    private Vector3 _initHeadPosition;
+    private PlayerStats _playerStats;
 
     public void Start()
     {

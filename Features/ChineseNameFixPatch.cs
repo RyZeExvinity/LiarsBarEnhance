@@ -1,8 +1,5 @@
 ﻿using HarmonyLib;
-
 using TMPro;
-
-using UnityEngine.Localization.Settings;
 
 namespace LiarsBarEnhance.Features;
 
