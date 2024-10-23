@@ -32,18 +32,25 @@
 
 # 安装
 
- 1. 安装插件加载器[BepInEx5](https://github.com/BepInEx/BepInEx/releases)（[官方教程](https://docs.bepinex.dev/articles/user_guide/installation/index.html)）
- 2. 从[Release](https://github.com/dogdie233/LiarsBarEnhance/releases)下载插件本体（dll后缀）
- 3. 将下载的dll放置在插件文件夹 （即`<游戏根目录>/BepInEx/plugins`）
+ 1. 下载[BepInEx](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.2/BepInEx_win_x64_5.4.23.2.zip)
+ 2. 将BepInEx解压至游戏根目录（[官方安装教程](https://docs.bepinex.dev/articles/user_guide/installation/index.html)）  
+ 3. 从[Release](https://github.com/dogdie233/LiarsBarEnhance/releases)下载[最新Dll本体](https://github.com/dogdie233/LiarsBarEnhance/releases/download/1.0.0/com.github.dogdie233.LiarsBarEnhance.dll)  
+ 4. 将放置在插件文件夹（即`<游戏根目录>/BepInEx/plugins`）如何没有`plugins`目前请手动创建
 
 # 自己构建插件
 
- 1. 确保已经安装了[.NET SDK](https://dotnet.microsoft.com/zh-cn/download)（6.0或以上）
- 2. clone本仓库
- 3. 在项目根目录创建`lib`文件夹
- 4. 复制游戏的所有dll（位于`<游戏根目录>/Liar's Bar_Data/Managed/`）进`lib`文件夹
- 5. 在项目根目录执行`dotnet build -c Release`  
- 6. 生成的插件文件在`<项目根目录>/bin/Release/netstandard2.1/publish/com.github.dogdie233.LiarsBarEnhance.dll`
+ 1. 确保已经安装了[.NET SDK](https://dotnet.microsoft.com/zh-cn/download)（兼容netstandard2.1的SDK如6.0或以上）  
+ 2. `cmd` 或者 `powershell` 等终端输入 `git clone https://github.com/dogdie233/LiarsBarEnhance.git `克隆本仓库到本地(前提安装`Git`网上教程一堆)或点击绿绿`code`按钮点击`Download Zip`下载解压  
+ 3. 设置环境变量`LiarsBar`路径为游戏根目录下的`Liar's Bar_Data`目录或者从`<游戏根目录>/Liar's Bar_Data/Managed/`将[列表](#所需复制文件)中的dll文件复制到`lib`文件夹 
+ 4. 在项目根目录执行`dotnet build -c Release`
+ 5. 将Output目录下的`com.github.dogdie233.LiarsBarEnhance.dll`便是插件本体，按照[安装](#安装)继续进行下一步
+
+## 所需复制文件
+ - `Assembly-CSharp.dll`
+ - `Mirror.dll`
+ - `UnityEngine.UI`
+ - `Unity.TextMeshPro.dll`
+ - `Unity.Localization.dll`
 
 # 其他
 
