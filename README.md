@@ -55,10 +55,11 @@
 
 ## 安装
 
+***如果觉得麻烦，可以尝试一键安装工具[LiarsBarEnhanceInstaller](https://github.com/TianMengLucky/LiarsBarEnhanceInstaller)***
+
 1. 下载[BepInEx](https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.2/BepInEx_win_x64_5.4.23.2.zip)
 2. 将`BepInEx`解压至游戏根目录（[官方安装教程](https://docs.bepinex.dev/articles/user_guide/installation/index.html)）
-3. 从[Release](https://github.com/dogdie233/LiarsBarEnhance/releases)
-   下载[最新Dll本体](https://github.com/dogdie233/LiarsBarEnhance/releases/download/1.0.0/com.github.dogdie233.LiarsBarEnhance.dll)
+3. 从[Release](https://github.com/dogdie233/LiarsBarEnhance/releases)下载[最新Dll本体](https://github.com/dogdie233/LiarsBarEnhance/releases/download/1.0.0/com.github.dogdie233.LiarsBarEnhance.dll)
 4. 将插件本体(`com.github.dogdie233.LiarsBarEnhance.dll`)放置在插件文件夹（即`<游戏根目录>/BepInEx/plugins`）（没有`plugins`文件夹请手动创建）
 
 ## 自行构建插件
