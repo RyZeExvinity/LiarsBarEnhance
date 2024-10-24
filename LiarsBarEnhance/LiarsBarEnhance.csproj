@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>com.github.dogdie233.LiarsBarEnhance</AssemblyName>
@@ -16,7 +15,7 @@
     </PropertyGroup>
     
     <PropertyGroup Condition="'$(LiarsBarManaged)' == ''">
-        <ManagedDir>lib</ManagedDir>
+        <ManagedDir>..\lib</ManagedDir>
     </PropertyGroup>
 
     <PropertyGroup>

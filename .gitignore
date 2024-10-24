@@ -22,6 +22,14 @@ lib/*
 !lib
 
 # 构建
-/bin/
-/obj/
-Output/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Oo]utput/
