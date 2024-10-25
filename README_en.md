@@ -64,16 +64,8 @@
 
 1. Ensure that you have installed the [.NET SDK](https://dotnet.microsoft.com/zh-cn/download) (compatible with netstandard2.1 SDK such as 6.0 or above)  
 2. In `cmd` or `powershell` terminal, input `git clone https://github.com/dogdie233/LiarsBarEnhance.git` to clone the repository to your local machine or click the green `code` button and then click `Download Zip` to download and extract it  
-3. Set the environment variable `LiarsBarManaged` to `<game root directory>/Liar's Bar_Data/Managed/` or copy the DLL files listed in [Required Files](#required-files) from `<game root directory>/Liar's Bar_Data/Managed/` to the `lib` folder
+3. Set the environment variable `LiarsBarManaged` to `<game root directory>/Liar's Bar_Data/Managed/` or copy all dll files from `<game root directory>/Liar's Bar_Data/Managed/` to the `lib` folder.  
 4. Execute `dotnet build -c Release` in the root directory of the project  
 5. The plugin DLL (`com.github.dogdie233.LiarsBarEnhance.dll`) will be generated in the `Output` directory  
 
 ***Continue with the next steps according to [Installation](#installation)***
-
-## Required Files
-
-- `Assembly-CSharp.dll`
-- `Mirror.dll`
-- `UnityEngine.UI`
-- `Unity.TextMeshPro.dll`
-- `Unity.Localization.dll`

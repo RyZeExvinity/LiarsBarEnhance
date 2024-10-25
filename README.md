@@ -68,19 +68,11 @@
 
 1. 确保已经安装了[.NET SDK](https://dotnet.microsoft.com/zh-cn/download)（兼容netstandard2.1的SDK如6.0或以上）  
 2. `cmd` 或者 `powershell` 等终端输入 `git clone https://github.com/dogdie233/LiarsBarEnhance.git`克隆本仓库到本地(前提安装`Git`网上教程一堆)或点击绿色`code`按钮后点击`Download Zip`下载解压  
-3. 设置环境变量`LiarsBarManaged`为`<游戏根目录>/Liar's Bar_Data/Managed/`或者从`<游戏根目录>/Liar's Bar_Data/Managed/`将[列表](#所需复制文件)中的dll文件复制到`lib`文件夹中  
+3. 设置环境变量`LiarsBarManaged`为`<游戏根目录>/Liar's Bar_Data/Managed/`或者从`<游戏根目录>/Liar's Bar_Data/Managed/`中复制所有dll文件复制到`lib`文件夹  
 4. 在项目根目录执行`dotnet build -c Release`  
 5. 插件本体`com.github.dogdie233.LiarsBarEnhance.dll`将会生成在`Output`目录下  
 
 ***按照[安装](#安装)继续进行下一步操作***  
-
-## 所需复制文件
-
-- `Assembly-CSharp.dll`
-- `Mirror.dll`
-- `UnityEngine.UI`
-- `Unity.TextMeshPro.dll`
-- `Unity.Localization.dll`
 
 ## 其他
 
