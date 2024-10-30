@@ -27,10 +27,11 @@ public class BlorfAntiCheat
         __instance.CardTypes = new List<int>();
         RealCardTypes = new List<int>();
         var SetCardsCmd = AccessTools.Method(typeof(BlorfGamePlay), "SetCardsCmd");
-        var joker = 0;
+        var joker = 0;  //记录joker牌数
         for (int i = 0; i < 5; i++)
         {
-            if (joker > 2)
+          //生成假牌
+            if (joker > 2)  //由于joker只能存在两张，如果多了别人就知道你的牌是假的，符合游戏规则更能混淆一点
             {
                 __instance.CardTypes.Add(Random.Range(1, 3));
             }
@@ -59,11 +60,11 @@ public class BlorfAntiCheat
 
         for (int i = 0; i < 5; i++)
         {
-            currentcard = i;
+            currentcard = i;  //currentcard存储迭代次数
             __instance.Cards[i].GetComponent<Card>().Devil = false;
             __instance.Cards[i].GetComponent<Card>().gameObject.layer = 0;
             __instance.Cards[i].GetComponent<Card>().cardtype = __instance.CardTypes[i];
-            if (RealCardTypes[i] == -1)
+            if (RealCardTypes[i] == -1)  //这里本来应该是判断this.CardTypes是否是-1，为了保持手牌的真实改为用RealCardTypes判断
             {
                 RealCardTypes[i] = manager.BlorfGame.RoundCard;
                 __instance.Cards[i].GetComponent<Card>().Devil = true;
@@ -79,7 +80,7 @@ public class BlorfAntiCheat
     [HarmonyPrefix]
     public static bool SetCardPrefix(Card __instance)
     {
-        if (RealCardTypes[currentcard] == 1)
+        if (RealCardTypes[currentcard] == 1)  //使用currentcard判断卡牌类型，以此正确设置真实的卡牌
         {
             __instance.GetComponent<MeshFilter>().sharedMesh = Manager.Instance.BlorfGame.Card1;
         }
@@ -144,13 +145,13 @@ public class BlorfAntiCheat
                 && __instance.Cards[i].GetComponent<Card>().Selected
             )
             {
-                if (__instance.Cards[i].GetComponent<Card>().Devil)
+                if (__instance.Cards[i].GetComponent<Card>().Devil)  //这里不需要更改，因为SetCard的时候是使用RealCardTypes判断的
                 {
                     list.Add(-1);
                 }
                 else
                 {
-                    list.Add(RealCardTypes[i]);
+                    list.Add(RealCardTypes[i]);  //往列表添加真实的卡牌
                 }
             }
         }
