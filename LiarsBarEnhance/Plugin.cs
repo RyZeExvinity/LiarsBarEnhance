@@ -25,6 +25,7 @@ public class Plugin : BaseUnityPlugin
         Harmony.CreateAndPatchAll(typeof(RemoveNameLengthLimitPatch), nameof(RemoveNameLengthLimitPatch));
         Harmony.CreateAndPatchAll(typeof(FzHintPatch), nameof(FzHintPatch));
         Harmony.CreateAndPatchAll(typeof(SelectableLevelPatch), nameof(SelectableLevelPatch));
+        Harmony.CreateAndPatchAll(typeof(BlorfAntiCheat), nameof(BlorfAntiCheat));
         
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }
