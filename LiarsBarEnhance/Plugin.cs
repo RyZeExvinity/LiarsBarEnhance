@@ -26,7 +26,8 @@ public class Plugin : BaseUnityPlugin
         Harmony.CreateAndPatchAll(typeof(FzHintPatch), nameof(FzHintPatch));
         Harmony.CreateAndPatchAll(typeof(SelectableLevelPatch), nameof(SelectableLevelPatch));
         Harmony.CreateAndPatchAll(typeof(BlorfAntiCheat), nameof(BlorfAntiCheat));
-        
+        Harmony.CreateAndPatchAll(typeof(DiceAntiCheat), nameof(DiceAntiCheat));
+
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }
 }
